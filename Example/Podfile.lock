@@ -1,0 +1,16 @@
+PODS:
+  - JiraSwiftAPI (0.1.0)
+
+DEPENDENCIES:
+  - JiraSwiftAPI (from `../`)
+
+EXTERNAL SOURCES:
+  JiraSwiftAPI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JiraSwiftAPI: 9684e42de3b51a6a431192150e59f60af6078f8c
+
+PODFILE CHECKSUM: 98329ce2cb743356107031abd5681d22dc6709c5
+
+COCOAPODS: 1.9.1

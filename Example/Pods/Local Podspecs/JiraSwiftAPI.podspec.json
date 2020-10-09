@@ -1,0 +1,22 @@
+{
+  "name": "JiraSwiftAPI",
+  "version": "0.1.0",
+  "summary": "A short description of JiraSwiftAPI.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Maxime ORIOL/JiraSwiftAPI",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Maxime ORIOL": "moriol@tf1.fr"
+  },
+  "source": {
+    "git": "https://github.com/Maxime ORIOL/JiraSwiftAPI.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "osx": "10.10"
+  },
+  "source_files": "JiraSwiftAPI/Classes/**/*"
+}
