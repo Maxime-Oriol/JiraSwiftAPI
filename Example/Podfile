@@ -1,0 +1,6 @@
+use_frameworks!
+target 'JiraSwiftAPI_Tests' do
+  pod 'JiraSwiftAPI', :path => '../'
+  
+  
+end
