@@ -22,7 +22,7 @@ pod 'JiraSwiftAPI'
 
 ## Author
 
-Maxime ORIOL, moriol@tf1.fr
+Maxime ORIOL
 
 ## License
 
