@@ -1,6 +1,6 @@
 # JiraSwiftAPI
 
-[![CI Status](https://img.shields.io/travis/Maxime ORIOL/JiraSwiftAPI.svg?style=flat)](https://travis-ci.org/Maxime ORIOL/JiraSwiftAPI)
+[![CI Status](https://img.shields.io/travis/Maxime%20ORIOL/JiraSwiftAPI.svg?style=flat)](https://travis-ci.org/Maxime%20ORIOL/JiraSwiftAPI)
 [![Version](https://img.shields.io/cocoapods/v/JiraSwiftAPI.svg?style=flat)](https://cocoapods.org/pods/JiraSwiftAPI)
 [![License](https://img.shields.io/cocoapods/l/JiraSwiftAPI.svg?style=flat)](https://cocoapods.org/pods/JiraSwiftAPI)
 [![Platform](https://img.shields.io/cocoapods/p/JiraSwiftAPI.svg?style=flat)](https://cocoapods.org/pods/JiraSwiftAPI)
