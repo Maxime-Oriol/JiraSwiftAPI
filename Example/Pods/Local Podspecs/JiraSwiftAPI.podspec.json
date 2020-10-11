@@ -1,22 +1,24 @@
 {
   "name": "JiraSwiftAPI",
   "version": "0.1.0",
-  "summary": "A short description of JiraSwiftAPI.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Maxime ORIOL/JiraSwiftAPI",
+  "summary": "Swift library for JIRA based on JIRA documentation",
+  "swift_versions": "5.0",
+  "description": "Swift library for JIRA based on JIRA documentation. Actually you can't do any thing with this library for the moment.\nPlease wait for the first version.",
+  "homepage": "https://github.com/Maxime-Oriol/JiraSwiftAPI",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Maxime ORIOL": "moriol@tf1.fr"
+    "Maxime ORIOL": "maxime.oriol@omnilog.fr"
   },
   "source": {
-    "git": "https://github.com/Maxime ORIOL/JiraSwiftAPI.git",
+    "git": "https://github.com/Maxime-Oriol/JiraSwiftAPI.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "osx": "10.10"
   },
-  "source_files": "JiraSwiftAPI/Classes/**/*"
+  "source_files": "JiraSwiftAPI/Classes/**/*",
+  "swift_version": "5.0"
 }

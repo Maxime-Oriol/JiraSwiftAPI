@@ -9,7 +9,8 @@
 Pod::Spec.new do |s|
   s.name             = 'JiraSwiftAPI'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of JiraSwiftAPI.'
+  s.summary          = 'Swift library for JIRA based on JIRA documentation'
+  s.swift_version    = '5.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +19,15 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Swift library for JIRA based on JIRA documentation. Actually you can't do any thing with this library for the moment.
+  Please wait for the first version.
                        DESC
 
-  s.homepage         = 'https://github.com/Maxime ORIOL/JiraSwiftAPI'
+  s.homepage         = 'https://github.com/Maxime-Oriol/JiraSwiftAPI'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Maxime ORIOL' => 'moriol@tf1.fr' }
-  s.source           = { :git => 'https://github.com/Maxime ORIOL/JiraSwiftAPI.git', :tag => s.version.to_s }
+  s.author           = { 'Maxime ORIOL' => 'maxime.oriol@omnilog.fr' }
+  s.source           = { :git => 'https://github.com/Maxime-Oriol/JiraSwiftAPI.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform = :osx

@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B3565C52531EA6500834850 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3565C42531EA6500834850 /* RequestManager.swift */; };
+		7BE0F4BE2530C88A0017CD8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE0F4BD2530C88A0017CD8C /* AppDelegate.swift */; };
+		7BE0F4C02530C88A0017CD8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE0F4BF2530C88A0017CD8C /* ViewController.swift */; };
+		7BE0F4C22530C88B0017CD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0F4C12530C88B0017CD8C /* Assets.xcassets */; };
+		7BE0F4C52530C88B0017CD8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0F4C32530C88B0017CD8C /* Main.storyboard */; };
+		C78B7B4B38CF55EAF9CEEE69 /* Pods_JiraSwiftApiExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D904C86DAFECD02CEC77FF /* Pods_JiraSwiftApiExample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B3565C42531EA6500834850 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		7BE0F4BA2530C88A0017CD8C /* JiraSwiftApiExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiraSwiftApiExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BE0F4BD2530C88A0017CD8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7BE0F4BF2530C88A0017CD8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7BE0F4C12530C88B0017CD8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7BE0F4C42530C88B0017CD8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7BE0F4C62530C88B0017CD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BE0F4C72530C88B0017CD8C /* JiraSwiftApiExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JiraSwiftApiExample.entitlements; sourceTree = "<group>"; };
+		90D904C86DAFECD02CEC77FF /* Pods_JiraSwiftApiExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiraSwiftApiExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC130A239402FFC19D6E2F99 /* Pods-JiraSwiftApiExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiraSwiftApiExample.debug.xcconfig"; path = "Target Support Files/Pods-JiraSwiftApiExample/Pods-JiraSwiftApiExample.debug.xcconfig"; sourceTree = "<group>"; };
+		FEF764944A6C8425216AFE82 /* Pods-JiraSwiftApiExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JiraSwiftApiExample.release.xcconfig"; path = "Target Support Files/Pods-JiraSwiftApiExample/Pods-JiraSwiftApiExample.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BE0F4B72530C88A0017CD8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C78B7B4B38CF55EAF9CEEE69 /* Pods_JiraSwiftApiExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2433EA3E3831A124D31D22C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC130A239402FFC19D6E2F99 /* Pods-JiraSwiftApiExample.debug.xcconfig */,
+				FEF764944A6C8425216AFE82 /* Pods-JiraSwiftApiExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7BE0F4B12530C88A0017CD8C = {
+			isa = PBXGroup;
+			children = (
+				7BE0F4BC2530C88A0017CD8C /* JiraSwiftApiExample */,
+				7BE0F4BB2530C88A0017CD8C /* Products */,
+				2433EA3E3831A124D31D22C3 /* Pods */,
+				98CC2B0920CDDCB9C26BD508 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7BE0F4BB2530C88A0017CD8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BE0F4BA2530C88A0017CD8C /* JiraSwiftApiExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BE0F4BC2530C88A0017CD8C /* JiraSwiftApiExample */ = {
+			isa = PBXGroup;
+			children = (
+				7BE0F4BD2530C88A0017CD8C /* AppDelegate.swift */,
+				7BE0F4BF2530C88A0017CD8C /* ViewController.swift */,
+				7BE0F4C12530C88B0017CD8C /* Assets.xcassets */,
+				7BE0F4C32530C88B0017CD8C /* Main.storyboard */,
+				7BE0F4C62530C88B0017CD8C /* Info.plist */,
+				7BE0F4C72530C88B0017CD8C /* JiraSwiftApiExample.entitlements */,
+				7B3565C42531EA6500834850 /* RequestManager.swift */,
+			);
+			path = JiraSwiftApiExample;
+			sourceTree = "<group>";
+		};
+		98CC2B0920CDDCB9C26BD508 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90D904C86DAFECD02CEC77FF /* Pods_JiraSwiftApiExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BE0F4B92530C88A0017CD8C /* JiraSwiftApiExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BE0F4CA2530C88B0017CD8C /* Build configuration list for PBXNativeTarget "JiraSwiftApiExample" */;
+			buildPhases = (
+				B6DE725C010A9321D0AA5505 /* [CP] Check Pods Manifest.lock */,
+				7BE0F4B62530C88A0017CD8C /* Sources */,
+				7BE0F4B72530C88A0017CD8C /* Frameworks */,
+				7BE0F4B82530C88A0017CD8C /* Resources */,
+				45EF14CF45EAC1DF2DC10F9C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JiraSwiftApiExample;
+			productName = JiraSwiftApiExample;
+			productReference = 7BE0F4BA2530C88A0017CD8C /* JiraSwiftApiExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BE0F4B22530C88A0017CD8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					7BE0F4B92530C88A0017CD8C = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 7BE0F4B52530C88A0017CD8C /* Build configuration list for PBXProject "JiraSwiftApiExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7BE0F4B12530C88A0017CD8C;
+			productRefGroup = 7BE0F4BB2530C88A0017CD8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BE0F4B92530C88A0017CD8C /* JiraSwiftApiExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7BE0F4B82530C88A0017CD8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE0F4C22530C88B0017CD8C /* Assets.xcassets in Resources */,
+				7BE0F4C52530C88B0017CD8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45EF14CF45EAC1DF2DC10F9C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JiraSwiftApiExample/Pods-JiraSwiftApiExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JiraSwiftApiExample/Pods-JiraSwiftApiExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JiraSwiftApiExample/Pods-JiraSwiftApiExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6DE725C010A9321D0AA5505 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JiraSwiftApiExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BE0F4B62530C88A0017CD8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE0F4C02530C88A0017CD8C /* ViewController.swift in Sources */,
+				7BE0F4BE2530C88A0017CD8C /* AppDelegate.swift in Sources */,
+				7B3565C52531EA6500834850 /* RequestManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7BE0F4C32530C88B0017CD8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BE0F4C42530C88B0017CD8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7BE0F4C82530C88B0017CD8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7BE0F4C92530C88B0017CD8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		7BE0F4CB2530C88B0017CD8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC130A239402FFC19D6E2F99 /* Pods-JiraSwiftApiExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JiraSwiftApiExample/JiraSwiftApiExample.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8PTZXN6376;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = JiraSwiftApiExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.omnilog.JiraSwiftApiExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7BE0F4CC2530C88B0017CD8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEF764944A6C8425216AFE82 /* Pods-JiraSwiftApiExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JiraSwiftApiExample/JiraSwiftApiExample.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8PTZXN6376;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = JiraSwiftApiExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.omnilog.JiraSwiftApiExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BE0F4B52530C88A0017CD8C /* Build configuration list for PBXProject "JiraSwiftApiExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE0F4C82530C88B0017CD8C /* Debug */,
+				7BE0F4C92530C88B0017CD8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BE0F4CA2530C88B0017CD8C /* Build configuration list for PBXNativeTarget "JiraSwiftApiExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE0F4CB2530C88B0017CD8C /* Debug */,
+				7BE0F4CC2530C88B0017CD8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BE0F4B22530C88A0017CD8C /* Project object */;
+}

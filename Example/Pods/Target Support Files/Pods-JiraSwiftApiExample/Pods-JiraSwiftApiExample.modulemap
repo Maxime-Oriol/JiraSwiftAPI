@@ -1,0 +1,6 @@
+framework module Pods_JiraSwiftApiExample {
+  umbrella header "Pods-JiraSwiftApiExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
