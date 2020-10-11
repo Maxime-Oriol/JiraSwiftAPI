@@ -10,11 +10,13 @@ public struct JiraConfiguration: JiraObject {
     public var name: String
     public var type: String
     public var link: URL
+    public var columnConfig: JiraColumnConfig
     
     public enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
         case type = "type"
         case link = "self"
+        case columnConfig = "columnConfig"
     }
 }

@@ -27,6 +27,8 @@
 		7B61462F2533085F006F3980 /* JiraRequestQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61462C2533085F006F3980 /* JiraRequestQuery.swift */; };
 		7B6146302533085F006F3980 /* JiraRequestBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61462D2533085F006F3980 /* JiraRequestBoard.swift */; };
 		7B6146312533085F006F3980 /* JiraRequestSprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B61462E2533085F006F3980 /* JiraRequestSprint.swift */; };
+		7BA66BAE25331D3D00ED37DC /* JiraColumnConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66BAD25331D3D00ED37DC /* JiraColumnConfig.swift */; };
+		7BA66BB225331D8700ED37DC /* JiraColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66BB125331D8700ED37DC /* JiraColumn.swift */; };
 		7C1F08AB0D323245FB5DD11981C59AA8 /* JiraStatusCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE91B813485E16B159A3A80237F058D /* JiraStatusCategory.swift */; };
 		B389323F6AF97FF7BA3A57CBB1539898 /* JiraIssues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85F3B1AD39FB427831B69B24AE59DB /* JiraIssues.swift */; };
 		B6A2CA4C667D267294202EA2FA4EE071 /* JiraSprintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E434B01E4E90BB36ED01E0AAEB0F49A /* JiraSprintState.swift */; };
@@ -75,6 +77,8 @@
 		7B61462D2533085F006F3980 /* JiraRequestBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JiraRequestBoard.swift; path = JiraSwiftAPI/Classes/Request/JiraRequestBoard.swift; sourceTree = "<group>"; };
 		7B61462E2533085F006F3980 /* JiraRequestSprint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JiraRequestSprint.swift; path = JiraSwiftAPI/Classes/Request/JiraRequestSprint.swift; sourceTree = "<group>"; };
 		7B7555827AF4AF2580EBD018E9ED1B92 /* Pods_JiraSwiftApiExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JiraSwiftApiExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BA66BAD25331D3D00ED37DC /* JiraColumnConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraColumnConfig.swift; sourceTree = "<group>"; };
+		7BA66BB125331D8700ED37DC /* JiraColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraColumn.swift; sourceTree = "<group>"; };
 		7EF3D97FAF8FF9A5EA3E51EB5F9FD66F /* JiraComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraComponent.swift; sourceTree = "<group>"; };
 		7FAEE65B90295EF876330B87CEEF56A8 /* JiraIssueFields.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraIssueFields.swift; sourceTree = "<group>"; };
 		80166F8A254A538EF4A53E7A0E364553 /* JiraIssueStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraIssueStatus.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 				2E434B01E4E90BB36ED01E0AAEB0F49A /* JiraSprintState.swift */,
 				6FE91B813485E16B159A3A80237F058D /* JiraStatusCategory.swift */,
 				B0AB053C1318E95E9DAE114CF38A419E /* JiraTimeTracking.swift */,
+				7BA66BAD25331D3D00ED37DC /* JiraColumnConfig.swift */,
+				7BA66BB125331D8700ED37DC /* JiraColumn.swift */,
 			);
 			name = Models;
 			path = JiraSwiftAPI/Classes/Models;
@@ -383,6 +389,7 @@
 				E46368E62A710841993E2B0871781B23 /* JiraConfiguration.swift in Sources */,
 				7B61462425330843006F3980 /* JiraException.swift in Sources */,
 				7B61462825330843006F3980 /* JiraAPI.swift in Sources */,
+				7BA66BAE25331D3D00ED37DC /* JiraColumnConfig.swift in Sources */,
 				122AFD76A3808B879915E69BEC55B67C /* JiraIssue.swift in Sources */,
 				4A0A33A5CA2D95120EC869D271F377D0 /* JiraIssueFields.swift in Sources */,
 				B389323F6AF97FF7BA3A57CBB1539898 /* JiraIssues.swift in Sources */,
@@ -400,6 +407,7 @@
 				7C1F08AB0D323245FB5DD11981C59AA8 /* JiraStatusCategory.swift in Sources */,
 				DB17619DE65E8B220210C763BF037035 /* JiraSwiftAPI-dummy.m in Sources */,
 				7B61462725330843006F3980 /* JiraAPIDelegate.swift in Sources */,
+				7BA66BB225331D8700ED37DC /* JiraColumn.swift in Sources */,
 				30C021AC1510489AD24C07E301292536 /* JiraTimeTracking.swift in Sources */,
 				7B61462625330843006F3980 /* JiraRequest.swift in Sources */,
 			);
