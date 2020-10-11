@@ -53,6 +53,12 @@ public class JiraAPI {
         }
     }
     
+    public func getIssuesForBoard(startAt: Int? = nil, maxResults: Int? = nil, jql: String? = nil, validateQuery: Bool = true, fields: [String] = []) {
+        self.requestManager.getIssuesForBoard(startAt: startAt, maxResults: maxResults, jql: jql, validateQuery: validateQuery, fields: fields) { (issues) in
+            self.delegate?.didGetIssuesForBoard(issues: issues)
+        }
+    }
+    
     public func getAllSprints(startAt: Int? = nil, maxResults: Int? = nil, states: [JiraSprintState] = []) {
         
         self.requestManager.allSprints(startAt: startAt, maxResults: maxResults, states: states) { (sprints) in

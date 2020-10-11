@@ -13,6 +13,7 @@ public protocol JiraAPIDelegate {
     func didGetIssuesForBacklog(issues: JiraIssues?)
     func didGetConfiguration(configuration: JiraConfiguration?)
     func didGetEpics(epics: JiraEpics?)
+    func didGetIssuesForBoard(issues: JiraIssues?)
 }
 
 //MARK: -- Make all methods optional
@@ -24,4 +25,5 @@ public extension JiraAPIDelegate {
     func didGetIssuesForBacklog(issues: JiraIssues?) { }
     func didGetConfiguration(configuration: JiraConfiguration?) { }
     func didGetEpics(epics: JiraEpics?) { }
+    func didGetIssuesForBoard(issues: JiraIssues?) { }
 }

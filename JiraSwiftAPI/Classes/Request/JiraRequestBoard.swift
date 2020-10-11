@@ -73,6 +73,32 @@ extension JiraRequest {
         }
     }
     
+    // GET /rest/agile/1.0/board/{boardId}/issue
+    // Returns all issues from a board, for a given board ID. This only includes issues that the user has permission to view. An issue belongs to the board if its status is mapped to the board's column. Epic issues do not belongs to the scrum boards. Note, if the user does not have permission to view the board, no issues will be returned at all. Issues returned from this resource include Agile fields, like sprint, closedSprints, flagged, and epic. By default, the returned issues are ordered by rank.
+    func getIssuesForBoard(startAt: Int? = nil, maxResults: Int? = nil, jql: String? = nil, validateQuery: Bool = true, fields: [String] = [], completion: ((JiraIssues?) -> Void)?) {
+        var parameters:[JiraRequestQuery: String] = [:]
+        if  let startAt = startAt {
+            parameters[.startAt] = String(startAt)
+        }
+        if let maxResults = maxResults {
+            parameters[.maxResults] = String(maxResults)
+        }
+        if let jql = jql {
+            parameters[.jql] = jql
+        }
+        if validateQuery == false {
+            parameters[.validateQuery] = "false"
+        }
+        if fields.count > 0 {
+            parameters[.fields] = fields.joined(separator: ",")
+        }
+        
+        self.get(path: "/rest/agile/1.0/board/{boardId}/issue", parameters: parameters) { (result) in
+            let issues:JiraIssues? = JiraParser.decode(data: result)
+            completion?(issues)
+        }
+    }
+    
     
     // GET /rest/agile/1.0/board/{boardId}/sprint
     // Returns all sprints from a board, for a given board ID. This only includes sprints that the user has permission to view.
