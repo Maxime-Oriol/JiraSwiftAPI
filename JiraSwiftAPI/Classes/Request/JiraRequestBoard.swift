@@ -103,7 +103,7 @@ extension JiraRequest {
     // GET /rest/agile/1.0/board/{boardId}/sprint
     // Returns all sprints from a board, for a given board ID. This only includes sprints that the user has permission to view.
     
-    func allSprints(startAt: Int?, maxResults: Int?, states:[JiraSprintState], completion: ((JiraSprints?) -> Void)?) {
+    func getAllSprints(startAt: Int?, maxResults: Int?, states:[JiraSprintState], completion: ((JiraSprints?) -> Void)?) {
         var parameters:[JiraRequestQuery: String] = [:]
         if  let startAt = startAt {
             parameters[.startAt] = String(startAt)
@@ -119,6 +119,27 @@ extension JiraRequest {
         self.get(path: "/rest/agile/1.0/board/{boardId}/sprint", parameters: parameters) { (result) in
             let sprints:JiraSprints? = JiraParser.decode(data: result)
             completion?(sprints)
+        }
+    }
+    
+    // GET /rest/agile/1.0/board/{boardId}/version
+    // Returns all versions from a board, for a given board ID. This only includes versions that the user has permission to view. Note, if the user does not have permission to view the board, no versions will be returned at all. Returned versions are ordered by the name of the project from which they belong and then by sequence defined by user.
+
+    func getAllVersions(startAt: Int? = nil, maxResults: Int? = nil, released: Bool? = nil, completion:((JiraVersions?) -> Void)?) {
+        var parameters:[JiraRequestQuery: String] = [:]
+        if  let startAt = startAt {
+            parameters[.startAt] = String(startAt)
+        }
+        if let maxResults = maxResults {
+            parameters[.maxResults] = String(maxResults)
+        }
+        if let released = released {
+            parameters[.released] = released ? "true" : "false"
+        }
+        
+        self.get(path: "/rest/agile/1.0/board/{boardId}/version", parameters: parameters) { (result) in
+            let versions: JiraVersions? = JiraParser.decode(data: result)
+            completion?(versions)
         }
     }
 }

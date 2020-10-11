@@ -60,9 +60,14 @@ public class JiraAPI {
     }
     
     public func getAllSprints(startAt: Int? = nil, maxResults: Int? = nil, states: [JiraSprintState] = []) {
-        
-        self.requestManager.allSprints(startAt: startAt, maxResults: maxResults, states: states) { (sprints) in
+        self.requestManager.getAllSprints(startAt: startAt, maxResults: maxResults, states: states) { (sprints) in
             self.delegate?.didGetAllSprints(sprints: sprints)
+        }
+    }
+    
+    public func getAllVersions(startAt: Int? = nil, maxResults: Int? = nil, released: Bool? = nil) {
+        self.requestManager.getAllVersions(startAt: startAt, maxResults: maxResults, released: released) { (versions) in
+            self.delegate?.didGetAllVersions(versions: versions)
         }
     }
     
