@@ -13,8 +13,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-JiraSwiftAPI is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+JiraSwiftAPI is not available through [CocoaPods](https://cocoapods.org) yet. But when the first version will be, to install it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'JiraSwiftAPI'
