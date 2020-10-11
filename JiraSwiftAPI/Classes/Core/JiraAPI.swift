@@ -47,6 +47,12 @@ public class JiraAPI {
         }
     }
     
+    public func getEpics(startAt: Int? = nil, maxResults: Int? = nil, done: Bool? = nil) {
+        self.requestManager.getEpics(startAt: startAt, maxResults: maxResults, done: done) { (epics) in
+            self.delegate?.didGetEpics(epics: epics)
+        }
+    }
+    
     public func getAllSprints(startAt: Int? = nil, maxResults: Int? = nil, states: [JiraSprintState] = []) {
         
         self.requestManager.allSprints(startAt: startAt, maxResults: maxResults, states: states) { (sprints) in

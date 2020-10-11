@@ -12,4 +12,5 @@ enum JiraRequestQuery: String, Decodable {
     case jql = "jql"
     case validateQuery = "validateQuery"
     case fields = "fields"
+    case done = "done"
 }

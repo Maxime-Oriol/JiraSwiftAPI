@@ -52,6 +52,27 @@ extension JiraRequest {
         }
     }
     
+    // GET /rest/agile/1.0/board/{boardId}/epic
+    // Returns all epics from the board, for the given board ID. This only includes epics that the user has permission to view. Note, if the user does not have permission to view the board, no epics will be returned at all.
+    
+    func getEpics(startAt: Int? = nil, maxResults: Int? = nil, done: Bool? = nil, completion:((JiraEpics?) -> Void)?) {
+        var parameters:[JiraRequestQuery: String] = [:]
+        if  let startAt = startAt {
+            parameters[.startAt] = String(startAt)
+        }
+        if let maxResults = maxResults {
+            parameters[.maxResults] = String(maxResults)
+        }
+        if let done = done {
+            parameters[.done] = done ? "true" : "false"
+        }
+        
+        self.get(path: "/rest/agile/1.0/board/{boardId}/epic", parameters: parameters) { (result) in
+            let epics: JiraEpics? = JiraParser.decode(data: result)
+            completion?(epics)
+        }
+    }
+    
     
     // GET /rest/agile/1.0/board/{boardId}/sprint
     // Returns all sprints from a board, for a given board ID. This only includes sprints that the user has permission to view.
