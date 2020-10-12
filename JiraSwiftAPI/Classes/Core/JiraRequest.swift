@@ -10,7 +10,7 @@ class JiraRequest {
     public let cacheManager = JiraCacheManager()
     private let server: String
     private let token:String
-    private let boardId:Int
+    public let boardId:Int
     
     init(server: String, token: String, boardId: Int) {
         

@@ -6,10 +6,12 @@
 //
 
 enum JiraRequestQuery: String, Decodable {
-    case startAt = "startAt"
-    case maxResults = "maxResults"
-    case state = "state"
-    case jql = "jql"
-    case validateQuery = "validateQuery"
-    case fields = "fields"
+    case startAt        = "startAt"
+    case maxResults     = "maxResults"
+    case state          = "state"
+    case jql            = "jql"
+    case validateQuery  = "validateQuery"
+    case fields         = "fields"
+    case expand         = "expand"
+    case boardId        = "boardId"
 }

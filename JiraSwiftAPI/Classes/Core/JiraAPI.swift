@@ -56,14 +56,27 @@ public class JiraAPI {
     
     //MARK: Sprint
     public func getSprint(id: Int) {
-        self.requestManager.sprint(id: id) { (sprint) in
+        self.requestManager.getSprint(id: id) { (sprint) in
             self.delegate?.didGetSprint(sprint: sprint)
         }
     }
     
     public func getIssues(sprint: Int) {
-        self.requestManager.issues(sprint: sprint) { (issues) in
+        self.requestManager.getIssues(sprint: sprint) { (issues) in
             self.delegate?.didGetAllIssues(sprint: sprint, issues: issues)
+        }
+    }
+    
+    //MARK: Issue
+    public func getIssue(issue: String, fields: [String] = [], expand:[String] = []) {
+        self.requestManager.getIssue(issueIdOfKey: issue, fields: fields, expand: expand) { (issue) in
+            self.delegate?.didGetIssue(issue: issue)
+        }
+    }
+    
+    public func getIssueEstimation(issue: String) {
+        self.requestManager.getIssueEstimation(issue: issue) { (issue, estimation) in
+            self.delegate?.didGetIssueEstimation(issue: issue, estimation: estimation)
         }
     }
 }
