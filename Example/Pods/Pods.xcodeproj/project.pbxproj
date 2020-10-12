@@ -31,6 +31,8 @@
 		7BA66BB225331D8700ED37DC /* JiraColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66BB125331D8700ED37DC /* JiraColumn.swift */; };
 		7BA66BB6253322EE00ED37DC /* JiraEpics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66BB5253322EE00ED37DC /* JiraEpics.swift */; };
 		7BA66BBA2533233600ED37DC /* JiraEpic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66BB92533233600ED37DC /* JiraEpic.swift */; };
+		7BA66BC4253331E400ED37DC /* JiraVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66BC3253331E400ED37DC /* JiraVersion.swift */; };
+		7BA66BC82533321900ED37DC /* JiraVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66BC72533321900ED37DC /* JiraVersions.swift */; };
 		7C1F08AB0D323245FB5DD11981C59AA8 /* JiraStatusCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE91B813485E16B159A3A80237F058D /* JiraStatusCategory.swift */; };
 		B389323F6AF97FF7BA3A57CBB1539898 /* JiraIssues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85F3B1AD39FB427831B69B24AE59DB /* JiraIssues.swift */; };
 		B6A2CA4C667D267294202EA2FA4EE071 /* JiraSprintState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E434B01E4E90BB36ED01E0AAEB0F49A /* JiraSprintState.swift */; };
@@ -83,6 +85,8 @@
 		7BA66BB125331D8700ED37DC /* JiraColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraColumn.swift; sourceTree = "<group>"; };
 		7BA66BB5253322EE00ED37DC /* JiraEpics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraEpics.swift; sourceTree = "<group>"; };
 		7BA66BB92533233600ED37DC /* JiraEpic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraEpic.swift; sourceTree = "<group>"; };
+		7BA66BC3253331E400ED37DC /* JiraVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraVersion.swift; sourceTree = "<group>"; };
+		7BA66BC72533321900ED37DC /* JiraVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraVersions.swift; sourceTree = "<group>"; };
 		7EF3D97FAF8FF9A5EA3E51EB5F9FD66F /* JiraComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraComponent.swift; sourceTree = "<group>"; };
 		7FAEE65B90295EF876330B87CEEF56A8 /* JiraIssueFields.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraIssueFields.swift; sourceTree = "<group>"; };
 		80166F8A254A538EF4A53E7A0E364553 /* JiraIssueStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JiraIssueStatus.swift; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 				7BA66BB125331D8700ED37DC /* JiraColumn.swift */,
 				7BA66BB5253322EE00ED37DC /* JiraEpics.swift */,
 				7BA66BB92533233600ED37DC /* JiraEpic.swift */,
+				7BA66BC3253331E400ED37DC /* JiraVersion.swift */,
+				7BA66BC72533321900ED37DC /* JiraVersions.swift */,
 			);
 			name = Models;
 			path = JiraSwiftAPI/Classes/Models;
@@ -398,6 +404,7 @@
 				7BA66BAE25331D3D00ED37DC /* JiraColumnConfig.swift in Sources */,
 				7BA66BB6253322EE00ED37DC /* JiraEpics.swift in Sources */,
 				122AFD76A3808B879915E69BEC55B67C /* JiraIssue.swift in Sources */,
+				7BA66BC82533321900ED37DC /* JiraVersions.swift in Sources */,
 				4A0A33A5CA2D95120EC869D271F377D0 /* JiraIssueFields.swift in Sources */,
 				B389323F6AF97FF7BA3A57CBB1539898 /* JiraIssues.swift in Sources */,
 				7B61462925330843006F3980 /* JiraCacheManager.swift in Sources */,
@@ -413,6 +420,7 @@
 				7B61462525330843006F3980 /* JiraParser.swift in Sources */,
 				7C1F08AB0D323245FB5DD11981C59AA8 /* JiraStatusCategory.swift in Sources */,
 				DB17619DE65E8B220210C763BF037035 /* JiraSwiftAPI-dummy.m in Sources */,
+				7BA66BC4253331E400ED37DC /* JiraVersion.swift in Sources */,
 				7B61462725330843006F3980 /* JiraAPIDelegate.swift in Sources */,
 				7BA66BBA2533233600ED37DC /* JiraEpic.swift in Sources */,
 				7BA66BB225331D8700ED37DC /* JiraColumn.swift in Sources */,
