@@ -14,4 +14,5 @@ enum JiraRequestQuery: String, Decodable {
     case fields         = "fields"
     case expand         = "expand"
     case boardId        = "boardId"
+    case released       = "released"
 }

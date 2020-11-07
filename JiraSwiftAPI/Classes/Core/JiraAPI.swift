@@ -1,10 +1,13 @@
 public class JiraAPI {
     
     private let requestManager: JiraRequest
-    public var delegate: JiraAPIDelegate? = nil
     
     //MARK: -- INIT method
-    public init(server: String, username: String, password: String, boardId: Int) throws {
+    public init(server: String,
+                username: String,
+                password: String,
+                boardId: Int,
+                projectId: String) throws {
         
         // Generate token based on login base64 encoded
         let tokenSource = username+":"+password
@@ -14,7 +17,7 @@ public class JiraAPI {
         
         let token = data.base64EncodedString()
         
-        self.requestManager = JiraRequest(server: server, token: token, boardId: boardId)
+        self.requestManager = JiraRequest(server: server, token: token, boardId: boardId, projectId: projectId)
         
     }
     
@@ -29,54 +32,91 @@ public class JiraAPI {
     
     //MARK: -- Available requests
     //MARK: Board
-    public func getBoard() {
+    public func getBoard(completion: ((JiraBoard?) -> Void)?) {
         self.requestManager.getBoard { (board) in
-            self.delegate?.didGetBoard(board: board)
+            completion?(board)
         }
     }
     
-    public func getIssuesForBacklog(startAt: Int? = nil, maxResults: Int? = nil, jql: String? = nil, validateQuery: Bool = true, fields: [String] = []) {
+    public func getIssuesForBacklog(startAt: Int? = nil,
+                                    maxResults: Int? = nil,
+                                    jql: String? = nil,
+                                    validateQuery: Bool = true,
+                                    fields: [String] = [],
+                                    completion: ((JiraIssues?) -> Void)?) {
         self.requestManager.getIssuesForBacklog(startAt: startAt, maxResults: maxResults, jql: jql, validateQuery: validateQuery, fields: fields) { (issues) in
-            self.delegate?.didGetIssuesForBacklog(issues: issues)
+            completion?(issues)
         }
     }
     
-    public func getConfiguration() {
+    public func getConfiguration(completion: ((JiraConfiguration?) -> Void)?) {
         self.requestManager.getConfiguration { (config) in
-            self.delegate?.didGetConfiguration(configuration: config)
+            completion?(config)
         }
     }
     
-    public func getAllSprints(startAt: Int? = nil, maxResults: Int? = nil, states: [JiraSprintState] = []) {
+    public func getAllSprints(startAt: Int? = nil,
+                              maxResults: Int? = nil,
+                              states: [JiraSprintState] = [],
+                              completion: ((JiraSprints?) -> Void)?) {
         
         self.requestManager.allSprints(startAt: startAt, maxResults: maxResults, states: states) { (sprints) in
-            self.delegate?.didGetAllSprints(sprints: sprints)
+            completion?(sprints)
         }
     }
     
     //MARK: Sprint
-    public func getSprint(id: Int) {
+    public func getSprint(id: Int,
+                          completion: ((JiraSprint?) -> Void)?) {
         self.requestManager.getSprint(id: id) { (sprint) in
-            self.delegate?.didGetSprint(sprint: sprint)
+            completion?(sprint)
         }
     }
     
-    public func getIssues(sprint: Int) {
-        self.requestManager.getIssues(sprint: sprint) { (issues) in
-            self.delegate?.didGetAllIssues(sprint: sprint, issues: issues)
+    public func getIssues(sprint: Int,
+                          startAt: Int? = nil,
+                          maxResults: Int? = nil,
+                          jql: String? = nil,
+                          expand: [String] = [],
+                          extraFields: [String] = [],
+                          completion: ((Int, JiraIssues?) -> Void)?) {
+        
+        self.requestManager.getIssues(sprint: sprint,
+                                      startAt: startAt,
+                                      maxResults: maxResults,
+                                      jql: jql,
+                                      expand: expand,
+                                      extraFields: extraFields) { (issues) in
+            completion?(sprint, issues)
         }
     }
     
     //MARK: Issue
-    public func getIssue(issue: String, fields: [String] = [], expand:[String] = []) {
+    public func getIssue(issue: String,
+                         fields: [String] = [],
+                         expand:[String] = [],
+                         completion: ((JiraIssue?) -> Void)?) {
         self.requestManager.getIssue(issueIdOfKey: issue, fields: fields, expand: expand) { (issue) in
-            self.delegate?.didGetIssue(issue: issue)
+            completion?(issue)
         }
     }
     
-    public func getIssueEstimation(issue: String) {
+    public func getIssueEstimation(issue: String,
+                                   completion: ((String, JiraEstimation?) -> Void)?) {
         self.requestManager.getIssueEstimation(issue: issue) { (issue, estimation) in
-            self.delegate?.didGetIssueEstimation(issue: issue, estimation: estimation)
+            completion?(issue, estimation)
+        }
+    }
+    
+    public func getAllVersions(completion: (([JiraVersion])-> Void)?) {
+        self.requestManager.getVersions() { (versions) in
+            completion?(versions)
+        }
+    }
+    
+    public func updateVersion(version: JiraVersion, completion: ((JiraVersion?) -> Void)?) {
+        self.requestManager.updateVersion(version: version) { (version) in
+            completion?(version)
         }
     }
 }

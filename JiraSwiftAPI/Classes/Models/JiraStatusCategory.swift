@@ -10,4 +10,12 @@ public struct JiraStatusCategory: JiraObject {
     public var key: String
     public var colorName: String
     public var name: String
+    
+    public static func parse(data: Data) -> JiraObject? {
+        do {
+            return try JSONDecoder().decode(JiraStatusCategory.self, from: data)
+        } catch {
+            return nil
+        }
+    }
 }

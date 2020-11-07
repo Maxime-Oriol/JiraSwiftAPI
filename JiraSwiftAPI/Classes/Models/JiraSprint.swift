@@ -42,4 +42,12 @@ public struct JiraSprint: JiraObject {
         case _startDate = "startDate"
         case _endDate   = "endDate"
     }
+    
+    public static func parse(data: Data) -> JiraObject? {
+        do {
+            return try JSONDecoder().decode(JiraSprint.self, from: data)
+        } catch {
+            return nil
+        }
+    }
 }

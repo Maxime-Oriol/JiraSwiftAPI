@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0026DE25389FE800846AF0 /* ReleaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0026DD25389FE800846AF0 /* ReleaseViewModel.swift */; };
 		7B3565C52531EA6500834850 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3565C42531EA6500834850 /* RequestManager.swift */; };
+		7B89CB3E2534961F00739B4C /* SprintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89CB3D2534961F00739B4C /* SprintViewModel.swift */; };
+		7BA66BD22534360B00ED37DC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA66BD12534360B00ED37DC /* Configuration.swift */; };
 		7BE0F4BE2530C88A0017CD8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE0F4BD2530C88A0017CD8C /* AppDelegate.swift */; };
 		7BE0F4C02530C88A0017CD8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE0F4BF2530C88A0017CD8C /* ViewController.swift */; };
 		7BE0F4C22530C88B0017CD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE0F4C12530C88B0017CD8C /* Assets.xcassets */; };
@@ -16,7 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B0026DD25389FE800846AF0 /* ReleaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewModel.swift; sourceTree = "<group>"; };
 		7B3565C42531EA6500834850 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		7B89CB3D2534961F00739B4C /* SprintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprintViewModel.swift; sourceTree = "<group>"; };
+		7BA66BD12534360B00ED37DC /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		7BE0F4BA2530C88A0017CD8C /* JiraSwiftApiExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiraSwiftApiExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE0F4BD2530C88A0017CD8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BE0F4BF2530C88A0017CD8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +56,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7B89CB3C2534960700739B4C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7B89CB3D2534961F00739B4C /* SprintViewModel.swift */,
+				7B0026DD25389FE800846AF0 /* ReleaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7B89CB412534966500739B4C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BE0F4C32530C88B0017CD8C /* Main.storyboard */,
+				7BA66BD12534360B00ED37DC /* Configuration.swift */,
+				7BE0F4BD2530C88A0017CD8C /* AppDelegate.swift */,
+				7BE0F4C12530C88B0017CD8C /* Assets.xcassets */,
+				7BE0F4C62530C88B0017CD8C /* Info.plist */,
+				7BE0F4C72530C88B0017CD8C /* JiraSwiftApiExample.entitlements */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		7B89CB422534968000739B4C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7BE0F4BF2530C88A0017CD8C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		7BE0F4B12530C88A0017CD8C = {
 			isa = PBXGroup;
 			children = (
@@ -71,12 +107,9 @@
 		7BE0F4BC2530C88A0017CD8C /* JiraSwiftApiExample */ = {
 			isa = PBXGroup;
 			children = (
-				7BE0F4BD2530C88A0017CD8C /* AppDelegate.swift */,
-				7BE0F4BF2530C88A0017CD8C /* ViewController.swift */,
-				7BE0F4C12530C88B0017CD8C /* Assets.xcassets */,
-				7BE0F4C32530C88B0017CD8C /* Main.storyboard */,
-				7BE0F4C62530C88B0017CD8C /* Info.plist */,
-				7BE0F4C72530C88B0017CD8C /* JiraSwiftApiExample.entitlements */,
+				7B89CB422534968000739B4C /* Controller */,
+				7B89CB412534966500739B4C /* Support Files */,
+				7B89CB3C2534960700739B4C /* ViewModel */,
 				7B3565C42531EA6500834850 /* RequestManager.swift */,
 			);
 			path = JiraSwiftApiExample;
@@ -203,8 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B0026DE25389FE800846AF0 /* ReleaseViewModel.swift in Sources */,
 				7BE0F4C02530C88A0017CD8C /* ViewController.swift in Sources */,
 				7BE0F4BE2530C88A0017CD8C /* AppDelegate.swift in Sources */,
+				7BA66BD22534360B00ED37DC /* Configuration.swift in Sources */,
+				7B89CB3E2534961F00739B4C /* SprintViewModel.swift in Sources */,
 				7B3565C52531EA6500834850 /* RequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,17 +380,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = JiraSwiftApiExample/JiraSwiftApiExample.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "JiraSwiftApiExample/Support Files/JiraSwiftApiExample.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8PTZXN6376;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = JiraSwiftApiExample/Info.plist;
+				INFOPLIST_FILE = "JiraSwiftApiExample/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.omnilog.JiraSwiftApiExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -367,17 +405,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = JiraSwiftApiExample/JiraSwiftApiExample.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "JiraSwiftApiExample/Support Files/JiraSwiftApiExample.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8PTZXN6376;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = JiraSwiftApiExample/Info.plist;
+				INFOPLIST_FILE = "JiraSwiftApiExample/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.omnilog.JiraSwiftApiExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

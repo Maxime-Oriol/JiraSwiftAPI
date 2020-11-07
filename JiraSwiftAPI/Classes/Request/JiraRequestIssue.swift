@@ -20,8 +20,12 @@ extension JiraRequest {
             parameters[.expand] = expand.joined(separator: ",")
         }
         
-        self.get(path: path, parameters: nil) { (result) in
-            let issue:JiraIssue? = JiraParser.decode(data: result)
+        let builder = JiraRequestBuilder()
+        builder.path = path
+        builder.parameters = parameters
+        
+        self.execute(request: builder) { (result) in
+            let issue = JiraIssue.parse(data: result) as? JiraIssue
             completion?(issue)
         }
     }
@@ -30,10 +34,19 @@ extension JiraRequest {
     // Returns the estimation of the issue and a fieldId of the field that is used for it. boardId param is required. This param determines which field will be updated on a issue.
     func getIssueEstimation(issue: String, completion: ((String, JiraEstimation?) -> Void)?) {
         let path = "/rest/agile/1.0/issue/{issueIdOrKey}/estimation".replacingOccurrences(of: "{issueIdOrKey}", with: issue)
-        let parameters = [JiraRequestQuery.boardId: String(self.boardId)]
-        self.get(path: path, parameters: parameters) { (result) in
-            let estimation:JiraEstimation? = JiraParser.decode(data: result)
-            completion?(issue, estimation)
+        let parameters = [JiraRequestQuery.boardId: String(self.config.boardId)]
+        
+        let builder = JiraRequestBuilder()
+        builder.path = path
+        builder.parameters = parameters
+        
+        self.execute(request: builder) { (result) in
+            do {
+                let estimation = try JiraEstimation.parse(data: result)
+                completion?(issue, estimation)
+            } catch {
+                completion?(issue, nil)
+            }
         }
     }
 }

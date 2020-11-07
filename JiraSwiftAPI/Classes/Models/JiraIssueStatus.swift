@@ -8,5 +8,4 @@
 public struct JiraIssueStatus: JiraObject {
     public var name: String
     public var statusCategory: JiraStatusCategory
-    
 }

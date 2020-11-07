@@ -13,9 +13,10 @@ public struct JiraIssueFields: JiraObject {
     public var aggregatetimespent: Int?
     public var status:JiraIssueStatus
     public var components: [JiraComponent]
-    public var description: String
-    public var timetracking: JiraTimeTracking
+    public var description: String?
+    public var timetracking: JiraTimeTracking?
     public var closedSprints: [JiraSprint]?
+    public var extra:[String: AnyObject] = [:]
     
     private var _statuscategorychangedate: String?
     private var _created: String
@@ -49,5 +50,13 @@ public struct JiraIssueFields: JiraObject {
         case description                = "description"
         case timetracking               = "timetracking"
         case closedSprints              = "closedSprints"
+    }
+    
+    public static func parse(data: Data) -> JiraObject? {
+        do {
+        return try JSONDecoder().decode(JiraIssueFields.self, from: data)
+        } catch {
+            return nil
+        }
     }
 }
