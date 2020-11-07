@@ -12,6 +12,7 @@ public struct JiraIssue: JiraObject {
     public var link: URL
     public var key:String
     public var fields:JiraIssueFields
+    public var changelog: JiraIssueChangelog?
     
     public enum CodingKeys: String, CodingKey {
         case expand     = "expand"
@@ -19,5 +20,14 @@ public struct JiraIssue: JiraObject {
         case link       = "self"
         case key        = "key"
         case fields     = "fields"
+        case changelog  = "changelog"
+    }
+    
+    public static func parse(data: Data) -> JiraObject? {
+        do {
+        return try JSONDecoder().decode(JiraIssue.self, from: data)
+        } catch {
+            return nil
+        }
     }
 }

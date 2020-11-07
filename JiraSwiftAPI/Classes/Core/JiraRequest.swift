@@ -8,54 +8,34 @@
 class JiraRequest {
     
     public let cacheManager = JiraCacheManager()
-    private let server: String
-    private let token:String
-    private let boardId:Int
+    let config:JiraRequestConfig
     
-    init(server: String, token: String, boardId: Int) {
-        
-        self.server = server
-        self.token = token
-        self.boardId = boardId
+    
+    init(server: String, token: String, boardId: Int, projectId: String) {
+        config = JiraRequestConfig(server: server,
+                                   token: token,
+                                   boardId: boardId,
+                                   projectId: projectId)
     }
     
-    //MARK: -- Cache managment
-    
-    func enableCache(_ enabled: Bool) {
-        self.cacheManager.enabled = enabled
-    }
-    
-    func clearCache() {
-        self.cacheManager.clear()
-    }
-    
-    //MARK: -- Main method
-    open func get(path: String, parameters: [JiraRequestQuery: String]?, completion: @escaping ((Data) -> Void)) {
-        let route = self.compileRoute(path: path)
-        let queryParameters:[URLQueryItem] = self.generateQueryString(parameters: parameters)
-        var urlComponents = URLComponents(string: server+route)
-        if queryParameters.count > 0 {
-            urlComponents?.queryItems = queryParameters
-        }
-        guard let url = urlComponents?.url else {
-            print("Unable to build request url with query items")
+    //MARK: -- Execute request
+    open func execute(request: JiraRequestBuilder, completion: @escaping ((Data) -> Void)) {
+        guard let urlRequest = request.build(config: config),
+              let url = urlRequest.url?.absoluteString else {
             return
         }
         
-        guard self.cacheManager.value(route: url.absoluteString) == nil else {
-            if let cache = self.cacheManager.value(route: route) as? Data {
+        guard self.cacheManager.value(route: url) == nil else {
+            if let cache = self.cacheManager.value(route: url) as? Data {
                 completion(cache)
             }
             return
         }
         
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Basic "+token, forHTTPHeaderField: "Authorization")
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let responseData = data {
-                if self.cacheManager.enabled {
-                    self.cacheManager.preserve(route: url.absoluteString, data: responseData)
+                if self.cacheManager.enabled  && request.method == .get {
+                    self.cacheManager.preserve(route: url, data: responseData)
                 }
                 
                 completion(responseData)
@@ -66,20 +46,19 @@ class JiraRequest {
         }.resume()
     }
     
-    open func compileRoute(path: String) -> String {
-        return path.replacingOccurrences(of: "{boardId}", with: String(self.boardId))
+    //MARK: -- Cache managment
+    func enableCache(_ enabled: Bool) {
+        self.cacheManager.enabled = enabled
     }
     
-    open func generateQueryString(parameters: [JiraRequestQuery: String]?) -> [URLQueryItem] {
-        guard let parameters = parameters else {
-            return []
-        }
-        
-        var params:[URLQueryItem] = []
-        parameters.forEach {
-            let query = URLQueryItem(name: $0.key.rawValue, value: $0.value)
-            params.append(query)
-        }
-        return params
+    func clearCache() {
+        self.cacheManager.clear()
     }
+}
+
+struct JiraRequestConfig {
+    let server: String
+    let token:String
+    let boardId:Int
+    let projectId:String
 }

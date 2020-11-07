@@ -7,4 +7,12 @@
 
 public struct JiraColumn: JiraObject {
     public var name: String
+    
+    public static func parse(data: Data) -> JiraObject? {
+        do {
+            return try JSONDecoder().decode(JiraColumn.self, from: data)
+        } catch {
+            return nil
+        }
+    }
 }

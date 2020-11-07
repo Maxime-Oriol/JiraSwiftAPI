@@ -9,4 +9,12 @@ public struct JiraComponent: JiraObject {
     public var id: String
     public var name: String
     public var description: String?
+    
+    public static func parse(data: Data) -> JiraObject? {
+        do {
+        return try JSONDecoder().decode(JiraComponent.self, from: data)
+        } catch {
+            return nil
+        }
+    }
 }

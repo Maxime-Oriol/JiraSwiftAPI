@@ -10,8 +10,11 @@ extension JiraRequest {
     // GET /rest/agile/1.0/board/{boardId}
     // Returns the board for the given board ID. This board will only be returned if the user has permission to view it. Admins without the view permission will see the board as a private one, so will see only a subset of the board's data (board location for instance).
     func getBoard(completion: ((JiraBoard?) -> Void)?) {
-        self.get(path: "/rest/agile/1.0/board/{boardId}", parameters: nil) { (result) in
-            let board:JiraBoard? = JiraParser.decode(data: result)
+        let builder = JiraRequestBuilder()
+        builder.path = "/rest/agile/1.0/board/{boardId}"
+        
+        self.execute(request: builder) { (result) in
+            let board = JiraBoard.parse(data: result) as? JiraBoard
             completion?(board)
         }
     }
@@ -36,8 +39,12 @@ extension JiraRequest {
             parameters[.fields] = fields.joined(separator: ",")
         }
         
-        self.get(path: "/rest/agile/1.0/board/{boardId}/backlog", parameters: parameters) { (result) in
-            let issues:JiraIssues? = JiraParser.decode(data: result)
+        let builder = JiraRequestBuilder()
+        builder.path = "/rest/agile/1.0/board/{boardId}/backlog"
+        builder.parameters = parameters
+        
+        self.execute(request: builder) { (result) in
+            let issues = JiraIssues.parse(data: result) as? JiraIssues
             completion?(issues)
         }
         
@@ -46,9 +53,16 @@ extension JiraRequest {
     // GET /rest/agile/1.0/board/{boardId}/configuration
     // Get the board configuration. The response contains the following fields
     func getConfiguration(completion: ((JiraConfiguration?) -> Void)?) {
-        self.get(path: "/rest/agile/1.0/board/{boardId}/configuration", parameters: nil) { (result) in
-            let config:JiraConfiguration? = JiraParser.decode(data: result)
-            completion?(config)
+        let builder = JiraRequestBuilder()
+        builder.path = "/rest/agile/1.0/board/{boardId}/configuration"
+        
+        self.execute(request: builder) { (result) in
+            do {
+                let config = try JiraConfiguration.parse(data: result)
+                completion?(config)
+            } catch {
+                completion?(nil)
+            }
         }
     }
     
@@ -69,9 +83,18 @@ extension JiraRequest {
             parameters[.state] = statesStr
         }
         
-        self.get(path: "/rest/agile/1.0/board/{boardId}/sprint", parameters: parameters) { (result) in
-            let sprints:JiraSprints? = JiraParser.decode(data: result)
-            completion?(sprints)
+        let builder = JiraRequestBuilder()
+        builder.path = "/rest/agile/1.0/board/{boardId}/sprint"
+        builder.parameters = parameters
+        
+        self.execute(request: builder) { (result) in
+            do {
+                let sprints = try JiraSprints.parse(data: result)
+                completion?(sprints)
+            } catch {
+                completion?(nil)
+            }
+            
         }
     }
 }
