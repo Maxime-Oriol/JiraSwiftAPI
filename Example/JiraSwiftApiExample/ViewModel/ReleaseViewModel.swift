@@ -50,7 +50,6 @@ class ReleaseViewModel {
     }
     
     func changelogRequest(version: JiraVersion) -> URLRequest? {
-        // https://jira.etf1.tf1.fr/secure/ReleaseNote.jspa?projectId=13400&version=17581
         let absoluteString = Configuration.server+"/secure/ReleaseNote.jspa?projectId="+String(version.projectId)+"&version="+version.id
         guard let url = URL(string: absoluteString) else {
             return nil
